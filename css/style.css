@@ -1,0 +1,140 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+#content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 1s forwards; /* Aplicar animación de aparición */
+    animation-delay: 0.5s; /* Retraso para que la animación comience después de un pequeño tiempo */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Puede agregar un pequeño desplazamiento para el efecto de deslizamiento */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#content sub {
+    opacity: 50%;
+}
+
+#content > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.536);
+}
+
+#text-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+}
+
+.redes {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.redes a, .redes a * {
+    text-decoration: none;
+}
+
+.l-btn img {
+    width: 24px;
+    height: 24px;
+    border-radius: 0;
+    background: none;
+    border: none;
+    margin: 0 5px 0 0;
+}
+
+.l-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.ds { background-color: #7289DA; border-color: #7289DA; }
+.twc { background-color: #9146FF; border-color: #9146FF; }
+.x { background-color: #1DA1F2; border-color: #1DA1F2; }
+.yt { background-color: #FF0000; border-color: #FF0000; }
+.bk { background-color: #0057ff; border-color: #0057ff; }
+
+.l-btn:hover {
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.ds:hover { border-color: #7289DA; box-shadow: 0 0 15px 5px rgba(114, 137, 218, 0.5); }
+.twc:hover { border-color: #9146FF; box-shadow: 0 0 15px 5px rgba(145, 70, 255, 0.5); }
+.x:hover { border-color: #1DA1F2; box-shadow: 0 0 15px 5px rgba(29, 161, 242, 0.5); }
+.yt:hover { border-color: #FF0000; box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.5); }
+.bk:hover { border-color: #0057ff; box-shadow: 0 0 15px 5px rgba(0, 87, 255, 0.5); }
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    #content {
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    #content > img {
+        margin: 0 0 20px 0;
+    }
+
+    #text-content {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media screen and (max-width: 480px) {
+    #content > img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .redes {
+        justify-content: center;
+    }
+}
